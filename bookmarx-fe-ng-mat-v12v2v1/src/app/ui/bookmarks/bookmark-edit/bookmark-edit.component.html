@@ -1,0 +1,145 @@
+<script src="../bookmark-search/bookmark-search.component.ts"></script>
+<div class="form-container">
+
+
+
+
+  <form [formGroup]="bookmarkForm" novalidate (ngSubmit)="onSubmit()">
+
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Edit Bookmark</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <!-- ID -->
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <input
+                matInput
+                id="id"
+                [readonly]="true"
+                placeholder="ID"
+                formControlName="id">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Title -->
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+
+              <input
+                matInput
+                id="title"
+                type="text"
+                placeholder="Title"
+                formControlName="title"
+                #titleInput
+
+              >
+
+
+              <mat-error *ngIf="isTitleInvalid()">
+                Title is <strong>invalid</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+
+        <!-- URL -->
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <input id="url" matInput placeholder="URL" formControlName="url">
+            </mat-form-field>
+          </div>
+        </div>
+
+
+        <!-- Description -->
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+                  <textarea
+                    matInput
+                    rows="3"
+                    id="description"
+                    placeholder="Description"
+                    formControlName="description"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+
+
+        <!-- Tags -->
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Tags</mat-label>
+              <mat-chip-list #chipList>
+                <mat-chip *ngFor="let tag of currentTags" [selectable]="selectable" [removable]="removable" (removed)="onRemoveTag(tag)">
+
+                {{tag.name}}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+
+                <input
+                  placeholder="New Tag ..."
+                  [matChipInputFor]="chipList"
+                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                  [matChipInputAddOnBlur]="addOnBlur"
+                  (matChipInputTokenEnd)="onAddTag($event)">
+              </mat-chip-list>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- CreatedAt & ModifiedAt -->
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <input
+                matInput
+                id="createdAt"
+                [readonly]="true"
+                placeholder="Created At"
+                formControlName="createdAt">
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field class="full-width" appearance="fill">
+              <input
+                matInput
+                id="modifiedAt"
+                [readonly]="true"
+                placeholder="Modified At"
+                formControlName="modifiedAt">
+            </mat-form-field>
+          </div>
+        </div>
+
+      </mat-card-content>
+
+      <!-- Buttons -->
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Save</button>
+      </mat-card-actions>
+
+
+    </mat-card>
+
+  </form>
+
+
+  <div *ngIf="isWorking$ | async" class="spinner-border" role="status">
+    <span class="sr-only">Working...</span>
+  </div>
+</div>
+
+

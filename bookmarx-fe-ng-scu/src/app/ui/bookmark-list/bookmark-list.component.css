@@ -1,0 +1,11 @@
+scu-table {
+  --column-def: min-content minmax(50px, 300px) minmax(100px, 200px) minmax(200px, 200px) minmax(100px, 200px) minmax(100px, 200px) minmax(90px, 1fr);
+  overflow: auto;
+}
+
+scu-table-cell .group {
+  flex-direction: row;
+  display: inline-flex;
+  grid-template-columns: repeat(auto-fill, 75px);
+  gap: 8px;
+}

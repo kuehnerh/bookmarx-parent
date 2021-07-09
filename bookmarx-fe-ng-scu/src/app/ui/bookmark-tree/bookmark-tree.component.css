@@ -1,0 +1,14 @@
+.scu-tree-list-example-wrapper {
+  position: relative;
+  width: 250px;
+  margin-right: 50px;
+}
+.scu-tree-list-example-wrapper > scu-tree-list {
+  background-color: #fff;
+}
+scu-container {
+  height: 500px;
+}
+scu-container::part(wrapper) {
+  display: flex;
+}

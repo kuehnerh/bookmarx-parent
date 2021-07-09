@@ -1,0 +1,63 @@
+<div>
+
+  <scu-headline class="mt-4" element="h1">
+    List of Bookmarks <span class="light">({{bookmarkCount}})</span>
+  </scu-headline>
+
+
+  <scu-table>
+    <scu-table-head slot="head">
+
+      <scu-table-header>
+        <scu-checkbox indeterminate>
+        </scu-checkbox>
+      </scu-table-header>
+
+      <scu-table-header text="ID">
+      </scu-table-header>
+
+      <scu-table-header text="Title" filterable>
+      </scu-table-header>
+
+      <scu-table-header
+        text="URL">
+      </scu-table-header>
+
+      <scu-table-header text="Description">
+      </scu-table-header>
+
+      <scu-table-header text="Tags" alignment="right">
+      </scu-table-header>
+
+      <scu-table-header>
+      </scu-table-header>
+    </scu-table-head>
+
+    <scu-table-body slot="body">
+
+      <scu-table-row *ngFor="let bookmark of bookmarks">
+        <scu-table-cell><scu-checkbox checked></scu-checkbox></scu-table-cell>
+        <scu-table-cell>
+          <scu-truncated-text [text]="bookmark.id"></scu-truncated-text>
+        </scu-table-cell>
+        <scu-table-cell>{{bookmark.title}}</scu-table-cell>
+        <scu-table-cell (click)="onClickBookmark($event, bookmark.id, bookmark.url)">{{bookmark.url}}</scu-table-cell>
+        <scu-table-cell>{{bookmark.description}}</scu-table-cell>
+        <scu-table-cell alignment="right">{{bookmark.tags}}</scu-table-cell>
+        <scu-table-cell>
+          <div class="group">
+            <scu-icon-button
+              icon="edit" variant="default" color="secondary" shape="rectangular"
+              (click)="onClickEditBookmark($event, bookmark.id)">
+            </scu-icon-button>
+            <scu-icon-button
+              icon="trashcan" variant="default" color="secondary" shape="rectangular"
+              (click)="onClickDeleteBookmark($event, bookmark.id)">
+            </scu-icon-button>
+          </div>
+        </scu-table-cell>
+      </scu-table-row>
+    </scu-table-body>
+  </scu-table>
+
+</div>

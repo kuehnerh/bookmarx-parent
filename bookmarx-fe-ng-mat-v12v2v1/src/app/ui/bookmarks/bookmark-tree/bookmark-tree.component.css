@@ -1,0 +1,29 @@
+.form-container {
+  width: 95%;
+  margin: 0px auto; /* Top and bottom = 0px; left and right = center */
+  margin-top: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+
+.example-tree-invisible {
+  display: none;
+}
+
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+
+.folder-hover:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+

@@ -1,5 +1,10 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# data of development databases
+/keycloak-data
+/mongodb-data
+/postgres-data
+
 # compiled output
 /dist
 /tmp
@@ -44,3 +49,16 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/bookmarx-parent.iml
+/bookmarx-frontend-ng/dist/bookmarx-frontend-ng/
+/bookmarx-frontend-ng/node_modules/
+/bookmarx-frontend-ng/bookmarx-frontend-ng.iml
+/bookmarx-frontend-ng/node/
+/bookmarx-fe-ng-mat/node_modules/
+/bookmarx-fe-ng-mat-v12v2v0/bookmarx-fe-ng-mat-v12v2v0.iml
+/bookmarx-fe-ng-mat/dist/
+/bookmarx-fe-ng-mat/node/
+/bookmarx-frontend-ng/bookmarx-fe-ng-mat.iml
+/bookmarx-fe-ng-mat-v12v2v1/bookmarx-fe-ng-mat-v12v2v1.iml
+/bookmarx-fe-ng-scu/node/node_modules/npm/
+/bookmarx-fe-ng-mat-v12v2v1/node/node_modules/npm/

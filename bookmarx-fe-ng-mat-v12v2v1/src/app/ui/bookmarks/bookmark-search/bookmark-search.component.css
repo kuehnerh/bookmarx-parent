@@ -1,0 +1,16 @@
+.form-container {
+  width: 80%;
+  margin: 0px auto; /* Top and bottom = 0px; left and right = center */
+  margin-top: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.highlightMatch {
+  color: red;
+}
+
+
+

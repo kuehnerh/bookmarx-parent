@@ -1,0 +1,58 @@
+<div class="container">
+
+  <scu-headline class="mt-4" element="h1">
+    Edit Bookmark
+  </scu-headline>
+
+  <form [formGroup]="bookmarkForm">
+
+    <scu-input label="ID"
+               readonly
+               formControlName="id">
+    </scu-input>
+
+    <scu-input label="Title"
+               mandatory
+               formControlName="title"
+               [notification]="getTitleErrorMessage()"
+               [status]="isTitleInvalid()"
+               #titleInput>
+    </scu-input>
+    <scu-input label="URL" mandatory formControlName="url"></scu-input>
+    <scu-input label="Description" formControlName="description"></scu-input>
+    <scu-input label="Tags" formControlName="tags"></scu-input>
+
+
+    <scu-input readonly="true" label="Created at" formControlName="createdAt"></scu-input>
+    <scu-input readonly="true" label="Modifed at" formControlName="modifiedAt"></scu-input>
+
+
+
+
+
+
+
+    <scu-button-v4 (scuclick)="onSubmit()"
+                   icon="interface"
+                   variant="default"
+                   color="primary"
+                   text="Save">
+    </scu-button-v4>
+
+  </form>
+
+
+  <scu-loading-overlay *ngIf="isWorking$ | async"
+                       mode="page"
+                       text="This process can take a few minutes.">
+  </scu-loading-overlay>
+
+  <scu-toast
+    *ngFor="let toast of viewToastArray"
+    closable
+    (scuclose)="onClickCloseToast(toast)"
+    [status]="toast.status">
+    <div slot="message">{{toast.message}}</div>
+  </scu-toast>
+
+</div>

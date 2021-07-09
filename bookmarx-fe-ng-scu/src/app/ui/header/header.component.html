@@ -1,0 +1,70 @@
+<scu-top-bar
+  label="Bookmarx"
+  image="assets/icons/tag.svg"
+  display-mode="sticky"
+  (scuhomenavigationclick)="changePage('/')">
+
+  <div slot="top-bar-right">
+    <scu-fly-out type="top-bar" label="Language">
+      <ng-template ngFor let-language [ngForOf]="languages">
+        <scu-link mode="list" (scuclick)="changeLanguage(language)">
+          <scu-icon [customSvg]="'./assets/flags/' + language.flag + '.svg'" size="16"></scu-icon>
+          {{ language.label }}
+        </scu-link>
+      </ng-template>
+    </scu-fly-out>
+  </div>
+
+  <div slot="top-bar-right">
+    <scu-icon icon="user-topbar" size="24"></scu-icon>
+    <scu-fly-out type="top-bar" [label]="getUsername()">
+      <scu-link mode="list">My Account</scu-link>
+      <scu-link mode="list">Settings</scu-link>
+      <scu-link mode="list">Help</scu-link>
+    </scu-fly-out>
+  </div>
+
+  <scu-nav-bar slot="nav-bar"
+               more-label="More"
+               [autoHighlight]="false"
+               [showBackButton]="showBackButton$ | async"
+               (scubackclick)="goHistoryBack()">
+    <div slot="sidebar-header">
+      <scu-headline element="h3">EPS Layoutservice ({{ getEnvironmentName() }})</scu-headline>
+      <span>{{ getUsername() }}</span>
+    </div>
+
+    <div slot="actions">
+      <scu-nav-bar-action label="Search"
+                          [active]="getCurrentUrl() | isEqualTo: '/bookmarks/search'"
+                          (scuclick)="changePage('/bookmarks/search')">
+      </scu-nav-bar-action>
+
+      <scu-nav-bar-action label="List"
+                          [active]="getCurrentUrl() | isEqualTo: '/bookmarks/list'"
+                          (scuclick)="changePage('/bookmarks/list')">
+      </scu-nav-bar-action>
+
+      <scu-nav-bar-action label="Edit"
+                          [active]="getCurrentUrl() | startsWith: '/bookmarks/edit'"
+                          (scuclick)="changePage('/bookmarks/edit')">
+      </scu-nav-bar-action>
+
+      <scu-nav-bar-action label="Tree"
+                          [active]="getCurrentUrl() | startsWith: '/bookmarks/tree'"
+                          (scuclick)="changePage('/bookmarks/tree')">
+      </scu-nav-bar-action>
+
+      <scu-nav-bar-action label="TreeList"
+                          [active]="getCurrentUrl() | startsWith: '/bookmarks/treelist'"
+                          (scuclick)="changePage('/bookmarks/treelist')">
+      </scu-nav-bar-action>
+    </div>
+
+    <div slot="secondary">
+      <scu-link mode="sidebar">My Account</scu-link>
+      <scu-link mode="sidebar">Settings</scu-link>
+      <scu-link mode="sidebar">Help</scu-link>
+    </div>
+  </scu-nav-bar>
+</scu-top-bar>

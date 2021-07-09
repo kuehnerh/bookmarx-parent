@@ -1,0 +1,49 @@
+{
+  "guid": "root________",
+  "title": "",
+  "index": 0,
+  "dateAdded": 1451990804505000,
+  "lastModified": 1614246790870000,
+  "id": 1,
+  "typeCode": 2,
+  "type": "text/x-moz-place-container",
+  "root": "placesRoot",
+  "children": [
+    {
+      "guid": "menu________",
+      "title": "Lesezeichen-Menü",
+      "index": 0,
+      "dateAdded": 1451990804505000,
+      "lastModified": 1588054144498000,
+      "id": 2,
+      "typeCode": 2,
+      "type": "text/x-moz-place-container",
+      "root": "bookmarksMenuFolder"
+    },
+    {
+      "guid": "toolbar_____",
+      "title": "Lesezeichen-Symbolleiste",
+      "index": 1,
+      "dateAdded": 1451990804505000,
+      "lastModified": 1612510046211000,
+      "id": 3,
+      "typeCode": 2,
+      "type": "text/x-moz-place-container",
+      "root": "toolbarFolder",
+      "children": [
+        {
+          "guid": "FqvbsfKZZZ-w",
+          "title": "Important Links - Anwendungsentwicklung - Confluence",
+          "index": 0,
+          "dateAdded": 1592219066904000,
+          "lastModified": 1594046153721000,
+          "id": 1995,
+          "typeCode": 1,
+          "iconuri": "https://confluence.kaufland/s/de_DE/7109/9af699845080e5027a80c674ed9e6d30a44ff7e8/3/_/favicon.ico",
+          "type": "text/x-moz-place",
+          "uri": "https://confluence.kaufland/display/BAS/Important+Links"
+        }
+      ]
+    }
+  ]
+}

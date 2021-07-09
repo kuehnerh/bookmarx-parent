@@ -1,0 +1,26 @@
+<div class="container">
+
+  <form>
+
+    <scu-search
+      #searchInput
+      [formControl]="scuSearchControl"
+      label="Search"
+      mode="regular"
+      [liveSearchData]="scuSearchLiveSearchData"
+      (scusubmit)="onScuSearchSubmit()">
+    </scu-search>
+
+
+
+
+    <scu-button-v4 (scuclick)="onClickSearch()"
+                   icon="interface"
+                   variant="default"
+                   color="primary"
+                   text="Search">
+    </scu-button-v4>
+  </form>
+
+</div>
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
+http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd">
+    <changeSet id="202010211812" author="Heiko Kühner">
+        <createTable tableName="bmx_bookmark">
+            <column name="id" type="varchar(250)">
+                <constraints primaryKey="true" primaryKeyName="pk__bmx_bookmark__id" />
+            </column>
+            <column name="title" type="varchar(250)">
+            </column>
+            <column name="url" type="varchar(1024)">
+                <constraints nullable="false" notNullConstraintName="bookmark_url_notnull" />
+            </column>
+            <column name="description" type="clob">
+            </column>
+            <column name="tags" type="varchar(1024)">
+            </column>
+            <column name="CREATED_AT" type="TIMESTAMP"></column>
+            <column name="MODIFIED_AT" type="TIMESTAMP"></column>
+        </createTable>
+    </changeSet>
+
+
+    <changeSet id="2021-03-11T08:43:00" author="Heiko Kühner">
+        <createTable tableName="bmx_folder">
+            <column name="id" type="varchar(250)">
+                <constraints primaryKey="true" primaryKeyName="pk__bmx_folder__id" />
+            </column>
+            <column name="name" type="varchar(250)">
+            </column>
+            <column name="parent_id" type="varchar(250)">
+                <constraints foreignKeyName="fk__bmx_folder__parent_folder" references="bmx_folder(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+
+    <changeSet id="2021-09-09T14:25:00" author="Heiko Kühner">
+        <createTable tableName="bmx_folder_bookmark_assignment">
+            <column name="id" type="varchar(250)">
+                <constraints primaryKey="true" primaryKeyName="pk__bmx_fba__id" />
+            </column>
+            <column name="folder_id" type="varchar(250)">
+                <constraints foreignKeyName="fk__bmx_fba__folder_id" references="bmx_folder(id)"/>
+            </column>
+            <column name="bookmark_id" type="varchar(250)">
+                <constraints foreignKeyName="fk__bmx_fba__bookmark_id" references="bmx_bookmark(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+
+</databaseChangeLog>

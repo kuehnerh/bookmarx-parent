@@ -1,0 +1,34 @@
+<div class="form-container">
+  <div class="row">
+    <div class="col">
+
+      <form>
+      <mat-form-field class="full-width">
+      <input
+        #searchInputControlRef
+        matInput
+        id="search-input"
+        type="text"
+        placeholder="Search ..."
+        [formControl]="searchInputControl"
+        [matAutocomplete]="auto"
+        (keyup.enter)="onEnter($event)"
+
+
+      />
+        <mat-autocomplete
+          #auto="matAutocomplete"
+          autoActiveFirstOption
+          [displayWith]="displayWithFn"
+          (optionSelected)="onOptionSelected($event)"
+        >
+          <mat-option *ngFor="let option of filteredOptions$ | async" [value]="option">
+            <span [innerHTML]="option | highlight: textToHighlight"></span>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      </form>
+
+    </div>
+  </div>
+</div>

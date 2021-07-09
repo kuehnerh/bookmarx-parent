@@ -1,0 +1,18 @@
+<div class="scu-tree-list-example-wrapper">
+  <scu-headline element="h3">Folders</scu-headline>
+  <scu-tree-list class="custom">
+    <ng-container *ngTemplateOutlet="recursiveListTmpl; context:{ list: folderTree }"></ng-container>
+  </scu-tree-list>
+</div>
+
+
+<ng-template #recursiveListTmpl let-list="list">
+  <scu-tree-item *ngFor="let folder of list"
+                 label="{{folder.name}}"
+                 (click)="onClickTreeNode($event, folder)">
+
+    <scu-tree-list *ngIf="folder.hasChildren()">
+      <ng-container *ngTemplateOutlet="recursiveListTmpl; context:{ list: folder.children }"></ng-container>
+    </scu-tree-list>
+  </scu-tree-item>
+</ng-template>
