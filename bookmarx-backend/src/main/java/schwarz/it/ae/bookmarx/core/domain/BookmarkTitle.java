@@ -1,7 +1,7 @@
 package schwarz.it.ae.bookmarx.core.domain;
 
 public class BookmarkTitle {
-  private String title;
+  private final String title;
 
   public BookmarkTitle(String title) {
     this.title = title;

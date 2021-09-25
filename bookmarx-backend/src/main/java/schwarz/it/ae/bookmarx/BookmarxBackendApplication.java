@@ -12,7 +12,7 @@ public class BookmarxBackendApplication {
    *
    * see: https://github.com/liquibase/liquibase/issues/1741
    *
-   * @param args
+   * @param args Command line arguments
    */
   public static void main(String[] args) {
     SpringApplication.run(BookmarxBackendApplication.class, args);

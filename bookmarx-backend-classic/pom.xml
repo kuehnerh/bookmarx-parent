@@ -9,7 +9,6 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<groupId>schwarz.it.ae.bookmarx</groupId>
 	<artifactId>bookmarx-backend-classic</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bookmarx-backend-classic</name>

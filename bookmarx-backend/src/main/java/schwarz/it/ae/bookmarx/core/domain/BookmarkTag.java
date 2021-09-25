@@ -3,7 +3,7 @@ package schwarz.it.ae.bookmarx.core.domain;
 import org.apache.commons.lang3.StringUtils;
 
 public class BookmarkTag {
-  private String tag;
+  private final String tag;
 
   public BookmarkTag(String tag) {
     if (StringUtils.isEmpty(tag)) {

@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class EntityId {
-  private UUID uuid;
+  private final UUID uuid;
 
 
   public EntityId() {
@@ -29,7 +29,7 @@ public class EntityId {
   }
 
   public boolean exists() {
-    return uuid == null ? false : true;
+    return uuid != null;
   }
 
   @Override

@@ -1,6 +1,6 @@
 # Bookmarx - The ultimate Bookmark Management Solution
 
-This vision of this solution is to provide a browser independend bookmark management solution. It can be run on any platform that supports Java. 
+The vision of this solution is to provide a browser independent bookmark management solution. It can be run on any platform that supports Java. 
 
 Its internal architecture is based on the ideas of Clean Architecture. For this reason it also serves as an example implementation of our understanding of Clean Architecture. 
 
@@ -32,8 +32,11 @@ mvn clean install -DskipTests
 
 ### Run
 ```
+# Startup a local database
 docker-compose -f docker-compose.yml up -d
-java -jar ./bookmarx-backend/target/bookmarkx-backend-0.0.1-SNAPSHOT.jar
+
+# Run the application
+java -jar ./bookmarx-backend/target/bookmarx-backend-0.0.1-SNAPSHOT.jar
 ```
 
 ### Try it out 
@@ -43,8 +46,8 @@ GoTo: http://localhost:8080
 
 ### Backend
 
-#### Start Backend on dev machine
-Start: Run `schwarz.it.ae.bookmarx.BookmarxBackendApplication` it in your favourite IDE.
+#### Start Backend on your development machine
+Run `schwarz.it.ae.bookmarx.BookmarxBackendApplication` it in your favourite IDE.
 
 
 
@@ -52,7 +55,7 @@ Start: Run `schwarz.it.ae.bookmarx.BookmarxBackendApplication` it in your favour
 
 ### Frontend
 
-#### Start Frontend on dev machine
+#### Start Frontend on your development machine
 `ng serve --proxy-config proxy.conf.json`
 
 
@@ -61,7 +64,7 @@ Start: Run `schwarz.it.ae.bookmarx.BookmarxBackendApplication` it in your favour
 
 ### Database
 
-#### Start/Stop Databases on dev machine
+#### Start/Stop Databases on your development machine
 
 Start: `docker-compose -f docker-compose.yml up -d`
 
