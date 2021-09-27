@@ -9,7 +9,8 @@ Its internal architecture is based on the ideas of Clean Architecture. For this 
 ### Prerequisites
 - Java 11 
 - Maven 
-- Docker 
+- Docker
+- node/npm
 
 
 ### Build
