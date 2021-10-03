@@ -10,7 +10,7 @@ Its internal architecture is based on the ideas of Clean Architecture. For this 
 - Java 11 
 - Maven 
 - Docker
-- node/npm
+- node/npm - and setup as described by section [ Setting up npm settings](#Setting-up-npm-settings) 
 
 
 ### Build
@@ -59,7 +59,23 @@ Run `schwarz.it.ae.bookmarx.BookmarxBackendApplication` it in your favourite IDE
 #### Start Frontend on your development machine
 `ng serve --proxy-config proxy.conf.json`
 
-
+#### Setting up npm settings
+The User Interface uses the Schwarz Core UI that is located in a private repository. Therefore, you need to add the following file (if not already present)
+to your user directory. [More information on confluence](https://confluence.schwarz/display/LCU/CoreUI).
+```shell
+touch .npmrc
+```
+The content should be the following, so you can access the private repository that is configured in ```frontend/.npmrc```.
+```
+//schwarzit.jfrog.io/schwarzit/api/npm/npm/:always-auth=true
+//schwarzit.jfrog.io/schwarzit/api/npm/npm/:email=<<YOUR_EMAIL>>
+//schwarzit.jfrog.io/schwarzit/api/npm/npm/:username=<<YOUR_USERNAME>>
+//schwarzit.jfrog.io/schwarzit/api/npm/npm/:_password=<<YOUR_JFROG_AUTH_TOKEN_AS_BASE64_STRING>>
+```
+To encode your API token from JFrog you can use the following command (on macOS):
+```shell
+echo -n <<YOUR_JFROG_API_TOKEN>> | base64
+```
 
 
 
@@ -97,7 +113,7 @@ Web Client: `docker run -p 3000:3000 --name mongoclient mongoclient/mongoclient`
 
 #### ReSetup Angular Project
 1) run `ng update @angular/cli @angular/core`
-2) Create new empty Maven Module via Spring Initializer (eg. bookmarx-fe-ng-mat-v12v2v1).
+2) Create new empty Maven Module via Spring Initializer (e. g. bookmarx-fe-ng-mat-v12v2v1).
 3) Rename Delete everything except of `pom.xml`
 4) Create new Angular app `ng new bookmarx-fe-ng-mat-v12v2v1`
 5) Install Material `ng add @angular/material`
