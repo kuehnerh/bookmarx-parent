@@ -67,6 +67,7 @@ touch .npmrc
 ```
 The content should be the following, so you can access the private repository that is configured in ```frontend/.npmrc```.
 ```
+@scu:registry=https://schwarzit.jfrog.io/schwarzit/api/npm/npm/
 //schwarzit.jfrog.io/schwarzit/api/npm/npm/:always-auth=true
 //schwarzit.jfrog.io/schwarzit/api/npm/npm/:email=<<YOUR_EMAIL>>
 //schwarzit.jfrog.io/schwarzit/api/npm/npm/:username=<<YOUR_USERNAME>>
