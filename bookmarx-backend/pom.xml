@@ -15,7 +15,7 @@
 
   <description>Java Backend of the Bookmarx-Application</description>
   <properties>
-    <java.version>11</java.version>
+    <java.version>21</java.version>
     <skipTests>false</skipTests>
     <skipUTs>${skipTests}</skipUTs>
     <skipITs>${skipTests}</skipITs>
@@ -77,27 +77,27 @@
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>testcontainers</artifactId>
-      <version>1.15.3</version>
+      <version>1.19.7</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>junit-jupiter</artifactId>
-      <version>1.15.3</version>
+      <version>1.19.7</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>mongodb</artifactId>
-      <version>1.15.3</version>
+      <version>1.19.7</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.testcontainers</groupId>
       <artifactId>postgresql</artifactId>
-      <version>1.15.3</version>
+      <version>1.19.7</version>
       <scope>test</scope>
     </dependency>
 
@@ -106,7 +106,7 @@
     <dependency>
       <groupId>com.tngtech.archunit</groupId>
       <artifactId>archunit</artifactId>
-      <version>0.20.1</version>
+      <version>1.2.1</version>
       <scope>test</scope>
     </dependency>
 

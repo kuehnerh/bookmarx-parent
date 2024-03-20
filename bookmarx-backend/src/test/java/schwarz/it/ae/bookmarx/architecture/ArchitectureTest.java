@@ -43,7 +43,7 @@ class ArchitectureTest {
     }
 
     @Test
-    void testThatNoClassesFromEntrypointsDependOnClassesOutsidePackageExceptCore() {
+    void testThatNoClassesFromEntryPointsDependOnClassesOutsidePackageExceptCore() {
         ArchRuleDefinition
                 .noClasses().that().resideInAnyPackage("..bookmarx.entries..")
                 .should().dependOnClassesThat()

@@ -1,10 +1,10 @@
 package schwarz.it.ae.bookmarx.dataproviders.postgres;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
